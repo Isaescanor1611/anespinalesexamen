@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="anespinalesexamen.Registro"
+             Title="Registro">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center" ></Setter>
+                <Setter Property="TextColor" Value="Green"></Setter>
+                <Setter Property="FontSize" Value="14"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <VerticalStackLayout Spacing="20"
+                         Padding="25">
+        <StackLayout>
+            <Label x:Name="lblusuario" HorizontalTextAlignment="End" TextColor="red" FontSize="12" />
+            <Label Text="REGISTRO" HorizontalTextAlignment="Center" TextColor="Blue" FontSize="22"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions> 
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="Nombre" Grid.Row="0" Grid.Column="0" Style="{StaticResource labelStyle}"></Label>
+                <Label Text="Apellido" Grid.Row="0" Grid.Column="1" Style="{StaticResource labelStyle}"></Label>
+                <Label Text="Edad" Grid.Row="0" Grid.Column="2" Style="{StaticResource labelStyle}"></Label>
+                
+                
+
+                <Entry x:Name="txtNombre" Placeholder="Nombre" FontSize="15" Grid.Row="1" Grid.Column="0"></Entry>
+                <Entry x:Name="txtApellido" Placeholder="Apellido" FontSize="15" Grid.Row="1" Grid.Column="1" ></Entry>
+                <Entry x:Name="txtEdad" Placeholder="Edad" FontSize="15" Grid.Row="1" Grid.Column="2" ></Entry>
+            </Grid>
+            <Label Text=" " HorizontalTextAlignment="Center" TextColor="Blue" FontSize="25"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Fecha" Grid.Row="0" Grid.Column="0" Style="{StaticResource labelStyle}"></Label>
+                <Label Text="Pais" Grid.Row="1" Grid.Column="0" Style="{StaticResource labelStyle}"></Label>
+                <Label Text="Ciudad" Grid.Row="2" Grid.Column="0" Style="{StaticResource labelStyle}"></Label>
+                <Label Text="Monto inicio" Grid.Row="3" Grid.Column="0" Style="{StaticResource labelStyle}"></Label>
+                <Label x:Name="PagoMensualLabel" Text="Pago Mensual" Grid.Row="4" Grid.Column="0" Style="{StaticResource labelStyle}"></Label>
+                <Button x:Name="btnIniciar" Text="PAGO MENSUAL" Clicked="btnIniciar_Clicked" Grid.Row="5" Grid.Column="0"></Button>
+
+                <DatePicker x:Name="dpkFecha" Date="12/01/2024" Grid.Row="0" Grid.Column="1"></DatePicker>
+                <Picker x:Name="pkPais" Title="paises" Grid.Row="1" Grid.Column="1">
+                    <Picker.Items>
+                        <x:String>Ecuador</x:String>
+                        <x:String>Peru</x:String>
+                        <x:String>Colombia</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Picker x:Name="pkCiudades" Title="ciudades" Grid.Row="2" Grid.Column="1">
+                    <Picker.Items>
+                        <x:String>Quito</x:String>
+                        <x:String>Piura</x:String>
+                        <x:String>Medellin</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Entry x:Name="txtMontoI" Placeholder="pago inicial" FontSize="15" Grid.Row="3" Grid.Column="1" ></Entry>
+                <Button x:Name="btnResumen" Text="RESUMEN" Clicked="btnResumen_Clicked" Grid.Row="5" Grid.Column="1"></Button>
+            </Grid>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
